@@ -7,19 +7,20 @@ const recognition = new SpeechRecognition();
 const button = document.querySelector('#button');
 const container = document.querySelector('#container');
 const textbox = document.querySelector('#textbox');
+const input = document.querySelector('input');
 recognition.interimResults = true;
 
-let p = document.createElement("p");
+
 console.log("running");
 //on recognition start
 recognition.addEventListener("result", (e) => {
     console.log("listneing")
-  textbox.appendChild(p);
   const text = Array.from(e.results)
     .map((result) => result[0])
     .map((result) => result.transcript)
     .join("");
-  p.innerText =text;
+  console.log(input.value)
+  input.value =text;
    }
 );
 
@@ -28,6 +29,11 @@ button.addEventListener('click', function(){
     console.log("clickity clack");
     button.style.display = "none";
     recognition.start();
+})
+
+//when a recording finishes, the record button comes back up and u can overwrite if needed
+recognition.addEventListener('end',()=>{
+  button.style.display = "inline";
 })
 
 
