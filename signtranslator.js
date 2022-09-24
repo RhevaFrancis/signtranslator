@@ -8,6 +8,10 @@ const button = document.querySelector('#button');
 const container = document.querySelector('#container');
 const textbox = document.querySelector('#textbox');
 const input = document.querySelector('input');
+const result = document.querySelector('#result');
+const img = document.createElement("img");
+const go = document.querySelector('#go');
+img.src="hello.webp"
 recognition.interimResults = true;
 
 
@@ -29,6 +33,7 @@ button.addEventListener('click', function(){
     console.log("clickity clack");
     button.style.display = "none";
     recognition.start();
+    result.removeChild(result.lastChild)
 })
 
 //when a recording finishes, the record button comes back up and u can overwrite if needed
@@ -37,4 +42,12 @@ recognition.addEventListener('end',()=>{
 })
 
 
+go.addEventListener('click',(event)=>{
+  console.log("weeooo")
+  if(input.value.toLowerCase()=="hello"){
+    console.log("hi")
+    result.append(img)
+  }
+
+})
 
