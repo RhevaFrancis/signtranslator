@@ -11,9 +11,10 @@ const input = document.querySelector('input');
 const result = document.querySelector('#result');
 const img = document.createElement("img");
 const go = document.querySelector('#go');
+const how = document.querySelector('#how.giphy-embed');
 img.src="hello.webp"
 recognition.interimResults = true;
-
+how.style.display="none";
 
 console.log("running");
 //on recognition start
@@ -47,6 +48,9 @@ go.addEventListener('click',(event)=>{
   if(input.value.toLowerCase()=="hello"){
     console.log("hi")
     result.append(img)
+  }else if(input.value.toLowerCase()=="how are you doing"){
+    console.log("how")
+    how.style.display="inline";
   }
 
 })
