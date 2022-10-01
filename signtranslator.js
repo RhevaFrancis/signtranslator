@@ -34,7 +34,8 @@ button.addEventListener('click', function(){
     console.log("clickity clack");
     button.style.display = "none";
     recognition.start();
-    result.removeChild(result.lastChild)
+    how.style.display="none";
+    how.src="";
 })
 
 //when a recording finishes, the record button comes back up and u can overwrite if needed
@@ -47,9 +48,15 @@ go.addEventListener('click',(event)=>{
   console.log("weeooo")
   if(input.value.toLowerCase()=="hello"){
     console.log("hi")
-    result.append(img)
+    how.src="https://giphy.com/embed/3o7TKNKOfKlIhbD3gY";
+    how.style.display="inline";
   }else if(input.value.toLowerCase()=="how are you doing"){
     console.log("how")
+    how.src="https://giphy.com/embed/26FLgm33ve3iUexZC"
+    how.style.display="inline";
+  }else if(input.value.toLowerCase()=="good morning"){
+    console.log("lolololo")
+    how.src="https://giphy.com/embed/26FLchGgqamznV64E"
     how.style.display="inline";
   }
 
